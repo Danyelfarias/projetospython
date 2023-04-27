@@ -5,4 +5,5 @@ escolhido= random.choice(lista)
 if aposta== escolhido:
     print(f"sim , vc acetou eu escolhim {escolhido} ")
 else :
-    print( f"vc errou ,eu escolhi o numero {escolhido}")
+  print(f"vc errou, eu escolhi o numero \033[93;104m{escolhido}\033[0m")
+
