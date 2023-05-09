@@ -1,0 +1,11 @@
+nome= input(" Digite sem nome: ")
+nome_maisculo= nome.upper()
+nome_minusculo= nome.lower()
+quanti_letras =len(nome)
+quanti_let_sem_space= len(nome.replace("",""))
+primeiro_nome= nome.split()[0]
+print(f"o nome em letras maiusculas {nome_maisculo}")
+print(f"o nome em letras minusculas{nome_minusculo}")
+print(f"quantidade de caracteris{quanti_letras}")
+print(f"quantidade de letras apenas{quanti_let_sem_space}")
+print(f" seu primerio nome é {primeiro_nome}")
