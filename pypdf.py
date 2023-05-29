@@ -12,8 +12,8 @@ print(num_paginas)
 
 # Obter a página 1
 numero_pag =int(input('escolha o número da página: '))
-
-pagina1 = dados_pdf.pages[numero_pag]
+# assim a página vai fica mais dinamica
+pagina = dados_pdf.pages[numero_pag - 1]
 
 # Extrair o texto da página 1
 extrair_pagina1 = pagina1.extract_text()
