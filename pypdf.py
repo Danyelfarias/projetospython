@@ -1,19 +1,23 @@
-from pypdf import PdfFileReader
+import PyPDF2
 
-def ler_parte_pdf(arquivo_pdf, pagina_inicial, pagina_final):
-    texto = ""
-    with open(arquivo_pdf, "rb") as arquivo:
-        leitor_pdf = PdfFileReader(arquivo)
-        for pagina_num in range(pagina_inicial - 1, pagina_final):
-            pagina = leitor_pdf.getPage(pagina_num)
-            texto += pagina.extractText()
-    return texto
+# Abrir o arquivo PDF em modo binário
+arquivo_pdf = open('C:\\Users\\engen\\Documents\\2. Danyel\\DT Farma CE 25.05.2023.pdf', 'rb')
 
-arquivo_pdf = r'C:\Users\FARIAS\Documents\3. Danyel\projetospython\DT Farma CE 25.05.2023 (1).pdf'
-pagina_inicial = 1
-pagina_final = 3
+# Criar um objeto PdfReader
+dados_pdf = PyPDF2.PdfReader(arquivo_pdf)
 
-texto_extraido = ler_parte_pdf(arquivo_pdf, pagina_inicial, pagina_final)
+# Obter o número de páginas
+num_paginas = len(dados_pdf.pages)
+print(num_paginas)
 
-print(texto_extraido)
+# Obter a página 1
+numero_pag =int(input('escolha o número da página: '))
+# assim a página vai fica mais dinamica
+pagina = dados_pdf.pages[numero_pag - 1]
 
+# Extrair o texto da página 1
+extrair_pagina1 = pagina1.extract_text()
+print(extrair_pagina1)
+
+# Fechar o arquivo PDF
+arquivo_pdf.close()
